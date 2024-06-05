@@ -2,6 +2,7 @@ import json
 
 from django.urls import reverse
 from rest_framework import status
+from rest_framework.authtoken.models import Token
 from rest_framework.test import APIClient, APITestCase
 
 from order.factories import OrderFactory, UserFactory
@@ -15,13 +16,21 @@ class TestOrderViewSet(APITestCase):
     client = APIClient()
 
     def setUp(self):
+        self.user = UserFactory()
+        token = Token.objects.create(user=self.user)
+        token.save()
+
         self.category = CategoryFactory(title="technology")
         self.product = ProductFactory(
             title="mouse", price=100, category=[self.category]
         )
         self.order = OrderFactory(product=[self.product])
 
+
     def test_order(self):
+        token = Token.objects.get(user__username=self.user.username)
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
+
         response = self.client.get(
             reverse("order-list", kwargs={"version": "v1"}))
 
@@ -43,7 +52,15 @@ class TestOrderViewSet(APITestCase):
         )
 
     def test_create_order(self):
+        # Cria um novo usuário e token para o teste
         user = UserFactory()
+        token = Token.objects.create(user=user)
+        token.save()
+
+        # Autentica o cliente com o token do novo usuário
+        self.client.credentials(HTTP_AUTHORIZATION='Token ' + token.key)
+
+        # Cria um novo produto para o pedido
         product = ProductFactory()
         data = json.dumps({"products_id": [product.id], "user": user.id})
 
@@ -56,3 +73,5 @@ class TestOrderViewSet(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
         created_order = Order.objects.get(user=user)
+        self.assertIsNotNone(created_order)
+
