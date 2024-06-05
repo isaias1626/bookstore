@@ -46,6 +46,11 @@ INSTALLED_APPS = [
     "rest_framework.authtoken",
 ]
 
+DEBUG_TOOLBAR_CONFIG = {
+    'IS_RUNNING_TESTS': False,
+    # outras configurações
+}
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
