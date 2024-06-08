@@ -59,7 +59,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bookstore-production-b16b.up.railway.app']
 
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -168,3 +167,5 @@ INTERNAL_IPS = [
 STATIC_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_URL = "/static/"
+
+DEBUG = int(os.environ.get("DEBUG", default=0))
