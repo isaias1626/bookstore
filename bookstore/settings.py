@@ -57,7 +57,7 @@ SECRET_KEY = "(hs&#wxuo7-4)^@4p%p&9k*pf6yoc%w5l@r05ekf40=vp1@_e2"
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bookstore-gamma-fawn.vercel.app']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bookstore-production-b16b.up.railway.app']
 
 
 # Application definition
