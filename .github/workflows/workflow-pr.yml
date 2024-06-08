@@ -11,7 +11,8 @@ jobs:
         with:
           python-version: 3.12
       - name: Install poetry
-        run: pip install -U pip
+        run:
+          pip install -U pip
           pip install poetry
           poetry install
         env:
@@ -31,7 +32,6 @@ jobs:
         uses: wemake-services/wemake-python-styleguide@0.16.0
         continue-on-error: true
         with:
-          reporter: "github-pr-review"
+          reporter: 'github-pr-review'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DJANGO_ALLOWED_HOSTS: "localhost 127.0.0.1"
