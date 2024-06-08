@@ -57,7 +57,7 @@ SECRET_KEY = "(hs&#wxuo7-4)^@4p%p&9k*pf6yoc%w5l@r05ekf40=vp1@_e2"
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'ebac-bookstore-api.herokuapp.com', 'drsantos20.pythonanywhere.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bookstore-gamma-fawn.vercel.app']
 
 
 # Application definition
