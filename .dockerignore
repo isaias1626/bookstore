@@ -1,0 +1,4 @@
+__pycache__
+*.pvc
+env/
+db.sqlite3
