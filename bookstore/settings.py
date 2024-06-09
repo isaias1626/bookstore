@@ -10,32 +10,7 @@ https://docs.djangoproject.com/en/3.2/topics/settings/
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-<<<<<<< HEAD
-=======
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-
-REST_FRAMEWORK = {
-    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
-    "PAGE_SIZE": 5,
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework.authentication.BasicAuthentication",
-        "rest_framework.authentication.SessionAuthentication",
-        "rest_framework.authentication.TokenAuthentication",
-    ],
-}
-
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
->>>>>>> 2e59f70d0d12b44eb36270d178ca5743659842a8
 SECRET_KEY = os.environ.get("SECRET_KEY")
-
 
 For the full list of settings and their values, see
 """
@@ -51,12 +26,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bookstore-production-b16b.up.railway.app']
 
-<<<<<<< HEAD
 DEBUG = int(os.environ.get("DEBUG", default=0))
-
-=======
->>>>>>> 2e59f70d0d12b44eb36270d178ca5743659842a8
-# Application definition
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -144,7 +114,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 REST_FRAMEWORK = {
-<<<<<<< HEAD
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 5,
     "DEFAULT_AUTHENTICATION_CLASSES": [
@@ -155,15 +124,6 @@ REST_FRAMEWORK = {
 }
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-=======
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 10,
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.BasicAuthentication',
-        'rest_framework.authentication.SessionAuthentication',
-    ],
-}
->>>>>>> 2e59f70d0d12b44eb36270d178ca5743659842a8
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
@@ -184,7 +144,6 @@ INTERNAL_IPS = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-<<<<<<< HEAD
 STATIC_URL = "/static/"
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -194,15 +153,3 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
-=======
-STATIC_ROOT = '/staticfiles'
-
-
-DEBUG = int(os.environ.get("DEBUG", default=0))
-
-STATIC_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-STATIC_URL = "/static/"
-
-DEBUG = int(os.environ.get("DEBUG", default=0))
->>>>>>> 2e59f70d0d12b44eb36270d178ca5743659842a8
