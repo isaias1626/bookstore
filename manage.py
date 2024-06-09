@@ -2,6 +2,16 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+import os
+
+print("DATABASE CONFIGURATION:")
+print("ENGINE:", os.environ.get('SQL_ENGINE'))
+print("NAME:", os.environ.get('SQL_DATABASE'))
+print("USER:", os.environ.get('SQL_USER'))
+print("PASSWORD:", os.environ.get('SQL_PASSWORD'))
+print("HOST:", os.environ.get('SQL_HOST'))
+print("PORT:", os.environ.get('SQL_PORT'))
+
 
 
 def main():
