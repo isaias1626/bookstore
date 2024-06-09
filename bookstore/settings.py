@@ -165,7 +165,8 @@ INTERNAL_IPS = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = 'bookstore\staticfiles'
+
 
 DEBUG = int(os.environ.get("DEBUG", default=0))
 
