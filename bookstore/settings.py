@@ -91,7 +91,7 @@ DATABASES = {
         "USER": os.environ.get("SQL_USER", "postgres"),
         "PASSWORD": os.environ.get("SQL_PASSWORD", "RJVfphdBiUhSWYlWOOyBUbauVeffMJKu"),
         "HOST": os.environ.get("SQL_HOST", "viaduct.proxy.rlwy.net"),
-        "PORT": os.environ.get("SQL_PORT", "12976"),
+        "PORT": os.environ.get("SQL_PORT", "5432"),
     }
 }
 
@@ -149,7 +149,3 @@ STATIC_URL = "/static/"
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
