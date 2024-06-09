@@ -1,10 +1,10 @@
-version: '3.8'
+version: '3.9'
 
 services:
   db:
     image: postgres:13.0-alpine
     ports:
-      - "5432:5432"
+      - 5432:5432
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
@@ -15,16 +15,13 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/usr/src/app/
+      - . :/usr/src/app/
     ports:
-      - "8000:8000"
+      - 8000:8000
     env_file:
       - ./env.dev
     depends_on:
       - db
-    environment:
-      DJANGO_ALLOWED_HOSTS: 'localhost 127.0.0.1 [::1]'
-      SECRET_KEY: '(hs&#wxuo7-4)^@4p%p&9k*pf6yoc%w5l@r05ekf40=vp1@_e2'
 
 volumes:
   postgres_data:
