@@ -12,10 +12,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
 
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python-version }}
 
@@ -24,18 +24,14 @@ jobs:
           python -m ensurepip
           python -m pip install --upgrade pip
           python -m pip install poetry
+
       - name: View poetry --help
         run: poetry --help
 
       - name: Install dependencies
         shell: bash
-        run: |
-          poetry install
+        run: python -m poetry install
 
-      - name: Run tests
-        env:
-          DJANGO_ALLOWED_HOSTS: "localhost 127.0.0.1 [::1]"
-          SECRET_KEY: '(hs&#wxuo7-4)^@4p%p&9k*pf6yoc%w5l@r05ekf40=vp1@_e2'
-
+      - name: Test
         run: |
           poetry run python manage.py test
