@@ -25,9 +25,8 @@ fi
 echo "Coletando arquivos estáticos..."
 python3.12 src/bookstore/manage.py collectstatic --noinput
 
-# Criar o diretório de build para arquivos estáticos
 echo "Criando diretório de build para arquivos estáticos..."
 mkdir -p staticfiles
-mv src/bookstore/static staticfiles/
+mv src/bookstore/staticfiles staticfiles/
 
 echo "Build completo com sucesso!"
