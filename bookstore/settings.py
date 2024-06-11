@@ -23,7 +23,7 @@ SECRET_KEY = "(hs&#wxuo7-4)^@4p%p&9k*pf6yoc%w5l@r05ekf40=vp1@_e2"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bookstore-production-cf8a.up.railway.app']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -139,7 +139,7 @@ INTERNAL_IPS = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles' / 'static'
 
 DATABASES = {
     "default": {
@@ -151,6 +151,7 @@ DATABASES = {
         "PORT": os.environ.get("SQL_PORT", "5432"),
     }
 }
+
 
 DEBUG_TOOLBAR_CONFIG = {
     'IS_RUNNING_TESTS': False,
