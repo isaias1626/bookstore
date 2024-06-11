@@ -23,7 +23,7 @@ SECRET_KEY = "(hs&#wxuo7-4)^@4p%p&9k*pf6yoc%w5l@r05ekf40=vp1@_e2"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'bookstore-production-0cfe.up.railway.app']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
