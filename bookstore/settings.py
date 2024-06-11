@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+import dj_database_url
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +25,7 @@ SECRET_KEY = "(hs&#wxuo7-4)^@4p%p&9k*pf6yoc%w5l@r05ekf40=vp1@_e2"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'bookstore-production-cf8a.up.railway.app']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -139,7 +141,7 @@ INTERNAL_IPS = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = BASE_DIR / 'staticfiles_build' / 'static'
 
 DATABASES = {
     "default": {
@@ -151,6 +153,8 @@ DATABASES = {
         "PORT": os.environ.get("SQL_PORT", "5432"),
     }
 }
+
+DATABASES["default"] = dj_database_url.config()
 
 DEBUG_TOOLBAR_CONFIG = {
     'IS_RUNNING_TESTS': False,
