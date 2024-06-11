@@ -13,7 +13,7 @@ fi
 
 # Instalar dependências
 echo "Instalando dependências..."
-python3.12 -m pip install -r requirements.txt
+python3.12 -m pip install -r src/bookstore/requirements.txt
 
 # Verificar se Django foi instalado corretamente
 if ! python3.12 -c "import django" &> /dev/null; then
