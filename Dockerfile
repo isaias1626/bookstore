@@ -1,5 +1,5 @@
 # Use uma imagem base oficial do Python 3.12
-FROM python:3.12-slim as python-base
+FROM python:3.10-slim as python-base
 
     # python
 ENV PYTHONUNBUFFERED=1 \
