@@ -139,7 +139,7 @@ INTERNAL_IPS = [
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles_build' / 'static'
+STATIC_ROOT = BASE_DIR / 'staticfiles' / 'static'
 
 DATABASES = {
     "default": {
